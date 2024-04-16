@@ -47,7 +47,7 @@ describe('UPLOADS', () => {
         // });
     });
 
-    it.only('Upload single document without Async 2',  (done) => {
+    it('Upload single document without Async 2',  (done) => {
         const req = request
             .post('/upload/single');
 
@@ -60,7 +60,7 @@ describe('UPLOADS', () => {
             }
             console.log('=== Upload success ===', res.body);
             try {
-                expect(res.status).toBe(300);
+                expect(res.status).toBe(200);
                 expect(res.body.filename).toBe('cat-1.jpg');
                 done();
             } catch(e){
