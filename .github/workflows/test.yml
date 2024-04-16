@@ -19,4 +19,4 @@ jobs:
         run: npm install
 
       - name: Run Jest Test
-        run: npx jest upload.spec.ts
+        run: npx jest uploads.spec.ts
