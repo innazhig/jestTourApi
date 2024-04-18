@@ -22,7 +22,7 @@ export interface Tour {
     imageCover: string,
     ratingsAverage: number,
     guides:[],
-    startDates:[x: string],
+    startDates:string[],
     location?: {
         latitude: number,
         longitude: number,

@@ -1,10 +1,10 @@
-name: Jest Tests For Tour API
+name: Jest Tests For JsonPlaceHolder API
 run-name: Run JsonPlaceHolder tests
 
 on: push
 
 jobs:
-  jest-tour-api-test:
+  jest-JsonPlaceHolder-api-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,5 +18,5 @@ jobs:
       - name: Install npm dependencies
         run: npm install
 
-      - name: Run User SignUp Test
+      - name: Run All Tests from JsonPlaceHolder API
         run: npx jest specs/jsonplaceholder

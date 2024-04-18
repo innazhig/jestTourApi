@@ -21,7 +21,7 @@ export function createRandomTour(): Tour{
         "imageCover": files[Math.floor(Math.random() * files.length)],
         "ratingsAverage": 4.9,
         "guides": [],
-        "startDates": ["2024-04-04"],
+        "startDates": [new Date().toISOString(), "2024-04-04"],
         "location": {
             "latitude": 40.712776 + Math.random() * 10,
             "longitude": -74.005974 + Math.random() * 10,

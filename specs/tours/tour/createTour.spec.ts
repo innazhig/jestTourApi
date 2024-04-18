@@ -12,6 +12,7 @@ let cookie = null; //:[x:string]
 let user: User;
 let tour: Tour;
 let tourId = '';
+let dates = [new Date().toISOString()];
 
 describe('TOURS', () => {
 
