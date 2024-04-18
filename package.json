@@ -15,7 +15,8 @@
     "tour": "npx jest specs/tours/tour/createTour.spec.ts",
     "uploads": "npx jest uploads.spec.ts",
     "alltests": "npx jest specs/**/*.spec.ts",
-    "jsonplaceholder": "npx jest specs/jsonplaceholder"
+    "jsonplaceholder": "npx jest specs/jsonplaceholder",
+    "tourNegative": "npx jest specs/tours/tour/createTourWithNegativeData.spec.ts"
   },
   "keywords": [],
   "author": "",

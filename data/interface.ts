@@ -20,7 +20,7 @@ export interface Tour {
     price: number,
     rating: number,
     imageCover: string,
-    ratingsAverage: number,
+    ratingsAverage: any,
     guides:[],
     startDates:string[],
     location?: {
@@ -33,4 +33,12 @@ export interface Tour {
         type: string,
         coordinates: number[]
     }
+}
+
+export interface TestData {
+    fieldName?: string,
+    testName?: string,
+    tour?: Tour,
+    statusCode?: number,
+    errorMsg?: string
 }
