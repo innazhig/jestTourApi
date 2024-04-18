@@ -12,8 +12,10 @@
     "users": "npx jest users.spec.ts",
     "userSignUp": "npx jest userSignUp.spec.ts",
     "login": "npx jest login.spec.ts",
-    "tour": "npx jest createTour.spec.ts",
-    "uploads": "npx jest uploads.spec.ts"
+    "tour": "npx jest specs/tours/tour/createTour.spec.ts",
+    "uploads": "npx jest uploads.spec.ts",
+    "alltests": "npx jest specs/**/*.spec.ts",
+    "jsonplaceholder": "npx jest specs/jsonplaceholder"
   },
   "keywords": [],
   "author": "",

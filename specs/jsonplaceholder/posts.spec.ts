@@ -96,12 +96,11 @@ describe('POSTS', () => {
         request
             .patch('/posts/1')
             .send(data)
-            .expect(200)
             .end((err, res) => {
                 //console.log(' response body := ', res.body);
                 if (err) return done(err);
                 try {
-                    expect(res.statusCode).toBe(300);
+                    expect(res.statusCode).toBe(200);
                     expect(res.body.title).toBe(data.title);
                     //console.log('beforeTitle from PATCH = ', beforeTitle );
                     expect(res.body.title).not.toBe(beforeTitle);

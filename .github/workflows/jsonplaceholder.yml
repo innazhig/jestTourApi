@@ -1,10 +1,10 @@
-name: Run Jest Test
+name: Jest Tests For Tour API
+run-name: Run Tour API Tests
 
 on: push
 
 jobs:
-
-  jest-test:
+  jest-tour-api-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,5 +18,5 @@ jobs:
       - name: Install npm dependencies
         run: npm install
 
-      - name: Run Jest Test
-        run: npx jest uploads.spec.ts
+      - name: Run User SignUp Test
+        run: npx jest specs/jsonplaceholder

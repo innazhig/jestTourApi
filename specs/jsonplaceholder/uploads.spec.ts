@@ -1,6 +1,6 @@
 import * as supertest from 'supertest';
 const request = supertest('https://practice-react.sdetunicorns.com/api/test');
-import { upload, uploadSingle} from '../data/helpers';
+import { upload, uploadSingle} from '../../data/helpers';
 
 describe('UPLOADS', () => {
     it('Upload single document', async () => {

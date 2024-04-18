@@ -20,7 +20,7 @@ describe('TOURS', () => {
 
         //create a new user
         user = createUser();
-        console.log(user, '==================== User ======================');
+        //console.log(user, '==================== User ======================');
 
         await signUp(user).then((res) => {
             expect(res.statusCode).toBe(201);
@@ -47,7 +47,7 @@ describe('TOURS', () => {
         //create a new tour
         tour = createRandomTour();
         tourId = '';
-        console.log(tour, '==================== Tour ======================');
+       // console.log(tour, '==================== Tour ======================');
     });
 
     afterEach(async () => {
@@ -66,19 +66,6 @@ describe('TOURS', () => {
 
     describe('TOUR Positive', () => {
 
-        // afterEach(async () => {
-        //     console.log('============================== After Each ===================================');
-        //     if (!tourId) return;
-        //
-        //     // delete tour
-        //     await deleteTour(cookie, tourId).then(res => {
-        //         expect(res.statusCode).toBe(204);
-        //         expect(res.body).toEqual({});
-        //         console.log(res.statusCode, ' ==================== Tour Delete Status ======================')
-        //     });
-        //
-        //     tour = null;
-        // });
         describe('CREATE TOUR', () => {
 
             it.skip('Create Tour - Fixed data', async () => {
@@ -292,7 +279,7 @@ describe('TOURS', () => {
             });
         });
 
-        describe.only('DIFFICULTY - Positive', () => {
+        describe('DIFFICULTY - Positive', () => {
             it('Difficulty should be easy, medium or difficult', async () => {
                 console.log('============================== Difficulty should be easy, medium or difficult ===================================');
 
