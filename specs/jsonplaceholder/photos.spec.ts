@@ -96,28 +96,29 @@ describe('PHOTOS - positive', () => {
             .end((err, res) => {
                 if (err) return done(err);
                 beforeBody = res.body;
-                //console.log('beforeBody = ', beforeBody)
+                console.log('beforeBody = ', beforeBody)
+                request
+                    .patch(END_POINT+pid)
+                    .send(data)
+                    .end((err, res1) => {
+                        if (err) return done(err);
+                        try {
+                            expect(res1.statusCode).toBe(200);
+                            console.log(' response body PATCH := ', res1.body);
+                            expect(res1.body.id).toBe(pid);
+                            expect(res1.body.albumId).toBe(beforeBody.albumId);
+                            expect(res1.body.title).toBe(data.title);
+                            expect(res1.body.url).toEqual(null);
+                            expect(res1.body.thumbnailUrl).toEqual(null);
+                            done();
+                        }
+                        catch(error) {
+                            done(error);
+                        }
+                    })
             });
 
-        request
-            .patch(END_POINT+pid)
-            .send(data)
-            .end((err, res) => {
-                if (err) return done(err);
-                try {
-                    expect(res.statusCode).toBe(200);
-                    //console.log(' response body PATCH := ', res.body);
-                    expect(res.body.id).toBe(pid);
-                    expect(res.body.albumId).toBe(beforeBody.albumId);
-                    expect(res.body.title).toBe(data.title);
-                    expect(res.body.url).toEqual(null);
-                    expect(res.body.thumbnailUrl).toEqual(null);
-                    done();
-                }
-                catch(error) {
-                    done(error);
-                }
-            })
+
     });
 
     it('PUT Request Photo - Update A Title', (done, pid= 100) => {

@@ -1,5 +1,5 @@
 name: Jest Tests For Tour API
-run-name: Run Tour API Tests
+run-name: Run JsonPlaceHolder tests
 
 on: push
 
