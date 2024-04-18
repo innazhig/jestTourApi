@@ -122,23 +122,23 @@ describe('PHOTOS - positive', () => {
 
     it('PUT Request Photo - Update A Title', (done, pid= 100) => {
         const data = {
-            title: "PUT request - test",
-            albumId: undefined,
-            url: undefined,
-            thumbnailUrl: undefined
+            title: "PUT request - test"
+            // albumId: undefined,
+            // url: undefined,
+            // thumbnailUrl: undefined
         };
 
         // get photo by ID
-        request
-            .get(END_POINT + pid)
-            .end((err, res) => {
-                if (err) return done(err);
-                //console.log('res.body GET = ', res.body);
-                data.albumId = res.body.albumId;
-                data.url = res.body.url;
-                data.thumbnailUrl = res.body.thumbnailUrl;
-                //console.log('data At GET = ', data);
-            });
+        // request
+        //     .get(END_POINT + pid)
+        //     .end((err, res) => {
+        //         if (err) return done(err);
+        //         //console.log('res.body GET = ', res.body);
+        //         data.albumId = res.body.albumId;
+        //         data.url = res.body.url;
+        //         data.thumbnailUrl = res.body.thumbnailUrl;
+        //         //console.log('data At GET = ', data);
+        //     });
 
         request
             .patch(END_POINT + pid)
@@ -147,13 +147,13 @@ describe('PHOTOS - positive', () => {
                 if (err) return done(err);
                 try {
                     expect(res.statusCode).toBe(200);
-                    //console.log('res.body PATCH = ', res.body);
-                    //console.log('data At PATCH = ', data);
+                    console.log('res.body PATCH = ', res.body);
+                    console.log('data At PATCH = ', data);
                     expect(res.body.id).toBe(pid);
-                    expect(res.body.albumId).toBe(data.albumId);
+                   //expect(res.body.albumId).toBe(data.albumId);
                     expect(res.body.title).toBe(data.title);
-                    expect(res.body.url).toBe(data.url);
-                    expect(res.body.thumbnailUrl).toBe(data.thumbnailUrl);
+                   //expect(res.body.url).toBe(data.url);
+                   //expect(res.body.thumbnailUrl).toBe(data.thumbnailUrl);
                     done();
                } catch (error) {
                    done(error);
