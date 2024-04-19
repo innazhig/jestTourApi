@@ -54,7 +54,7 @@ jobs:
         run: echo "The workspace directory is ${{ github.workspace }}"
 
       - name: Navigate to a subdirectory
-        run: cd /home/runner/work/apiJestCopy
+        run: cd /home/runner/work/jestTourApi
 
       - name: Return to workspace directory
         run: cd ${{ github.workspace }}
