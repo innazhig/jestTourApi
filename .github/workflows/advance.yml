@@ -1,0 +1,60 @@
+name: Run Jest Tests
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ['14', '16', '18']
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install npm dependencies
+        run: npm install
+
+      - name: Run Jest Test
+        run: npx jest upload.spec.ts --json --outputFile=test-results.json
+
+      - name: Check if results exist
+        run: ls -l
+
+      - name: Zip test results
+        run: zip -r test-results.zip test-results.json
+        # working-directory: ${{ github.workspace }}
+
+      - name: Upload the test result ZIP
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: test-results.zip
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Print workspace directory
+        run: echo "The workspace directory is ${{ github.workspace }}"
+
+      - name: Navigate to a subdirectory
+        run: cd /home/runner/work/apiJestCopy
+
+      - name: Return to workspace directory
+        run: cd ${{ github.workspace }}

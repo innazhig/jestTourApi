@@ -2,5 +2,12 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  roots: ['<rootDir>/specs']
+  testEnvironmentOptions: {
+    url: 'localhost:8001/api/v1',
+  },
+  roots: ['<rootDir>/specs'],
+  reporters: [
+    "default", ["jest-junit", { outputDirectory: "reports" }],
+    ["jest-html-reporters", { publicPath: "./reports" }]
+  ],
 };
