@@ -29,7 +29,7 @@ jobs:
         run: npm install
 
       - name: Run Jest Test
-        run: npx jest upload.spec.ts --json --outputFile=test-results.json
+        run: npx jest uploads.spec.ts --json --outputFile=test-results.json
 
       - name: Check if results exist
         run: ls -l
