@@ -1,5 +1,5 @@
 import * as supertest from 'supertest';
-import {User, Tour} from "./interface";
+import {User, Tour, Review} from "./interface";
 
 const request = supertest('localhost:8001/api/v1');
 const requestSDET = supertest('https://practice-react.sdetunicorns.com/api/test');
@@ -8,6 +8,8 @@ export const URL_HOST = 'localhost:8001/api/v1';
 export const URL_SIGNUP = '/users/signup';
 export const URL_LOGIN = '/users/login';
 export const URL_TOURS = '/tours';
+
+export const URL_REVIEWS = '/reviews';
 
 
 // response: { headers: { [x: string]: any } }
@@ -40,6 +42,13 @@ export async function createTour(cookie: any, tour: Tour) {
         .set('Cookie', cookie)
         .send(tour);
     return res;
+}
+
+export async function createReview(cookie: any, review: Review) {
+    return request
+        .post(URL_REVIEWS)
+        .set('Cookie', cookie)
+        .send(review)
 }
 
 export async function loginFunction(user: {email: string, password: string}) {

@@ -35,6 +35,15 @@ export interface Tour {
     }
 }
 
+export interface Review {
+    tour?: string,
+    review?: string,
+    rating?: number,
+    createdAt?: Date,
+    user?: string
+
+}
+
 export interface TestData {
     fieldName?: string,
     testName?: string,
