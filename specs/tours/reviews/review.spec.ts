@@ -77,7 +77,7 @@ describe("REVIEW", () => {
                 // Verify that review was created
                 expect(res.statusCode).toBe(201);
 
-                console.log(res.body.data.data, '==================== Review Created ======================');
+                //console.log(res.body.data.data, '==================== Review Created ======================');
                 expect(res.body.data.data.review).toBe(review.review);
                 expect(res.body.data.data.tour).toBe(tourId);
                 expect(res.body.data.data.user).toBe(userId);
@@ -93,7 +93,7 @@ describe("REVIEW", () => {
         await createReview(cookie, review)
             .then((res) => {
                 expect(res.statusCode).toBe(201);
-                console.log(res.body.data.data, '==================== Review Created ======================');
+                //console.log(res.body.data.data, '==================== Review Created ======================');
                 expect(res.body.data.data.review).toBe(review.review);
                 expect(res.body.data.data.tour).toBe(tourId);
                 expect(res.body.data.data.user).toBe(userId);
